@@ -378,7 +378,7 @@ function App() {
       <footer className="site-footer">
         <Squiggle className="footer-squiggle" />
         <p className="footer-note">
-          Made with late nights & instant noodles by Carleton students.
+          Made by Carleton students, for Carleton students.
         </p>
       </footer>
     </div>
