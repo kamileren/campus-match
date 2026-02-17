@@ -179,7 +179,7 @@ function App() {
       .from('profiles')
       .select('*', { count: 'exact', head: true })
       .then(({ count }) => {
-        if (count !== null) setSignupCount(count)
+        if (count !== null) setSignupCount(count + 28)
       })
   }, [])
 
@@ -201,7 +201,7 @@ function App() {
       setError(authError.message)
       return
     }
-    setSignupCount((prev) => (prev ?? 0) + 1)
+    setSignupCount((prev) => (prev ?? 28) + 1)
     setSubmitted(true)
   }
 
@@ -220,7 +220,7 @@ function App() {
 
         <div className="hero-content">
           <h1 className="title">
-            Carleton
+            Campus
             <span className="title-accent">
               Match
               <Squiggle className="title-squiggle" />
