@@ -1,0 +1,44 @@
+:root {
+  --bg: #FEF6EE;
+  --bg-warm: #FDF0E3;
+  --terra: #C4593C;
+  --terra-light: #E8845F;
+  --peach: #F5C5A3;
+  --peach-light: #FBDFC8;
+  --amber: #E8A838;
+  --sage: #7A9E7E;
+  --ink: #2A2118;
+  --ink-light: #6B5E52;
+  --ink-faint: #9B8E82;
+  --card: rgba(255, 255, 255, 0.55);
+  --card-border: rgba(196, 89, 60, 0.12);
+
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--ink);
+  background-color: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--peach);
+  color: var(--ink);
+}
