@@ -157,6 +157,22 @@ function App() {
   const [taglineIdx, setTaglineIdx] = useState(0)
   const [taglineFading, setTaglineFading] = useState(false)
   const { containerRef, progress } = useStepParallax()
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  function handleEmailKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key !== '@') return
+    if (email.includes('@')) return
+    e.preventDefault()
+    const suffix = '@cmail.carleton.ca'
+    const newValue = email + suffix
+    setEmail(newValue)
+    setError('')
+    // Place cursor right after the '@' so the user can type their username prefix
+    requestAnimationFrame(() => {
+      const pos = email.length + 1
+      inputRef.current?.setSelectionRange(pos, pos)
+    })
+  }
 
   useEffect(() => {
     const id = setInterval(() => setTime(getTimeLeft()), 1000)
@@ -267,11 +283,13 @@ function App() {
               <p className="notify-label">Drop your Carleton email — we'll ping you when it's go time.</p>
               <form className="notify-form" onSubmit={handleSubmit}>
                 <input
+                  ref={inputRef}
                   type="email"
                   className="notify-input"
                   placeholder="you@cmail.carleton.ca"
                   value={email}
                   onChange={(e) => { setEmail(e.target.value); setError('') }}
+                  onKeyDown={handleEmailKeyDown}
                   required
                 />
                 <button type="submit" className="notify-btn" disabled={loading}>
