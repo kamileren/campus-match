@@ -392,6 +392,21 @@ function App() {
         </div>
       </section>
 
+      {/* ── Support ── */}
+      <section className="section support-section">
+        <h2 className="section-title">Need help?</h2>
+        <p className="support-desc">
+          Found a bug or have a question? We'd love to hear from you.
+        </p>
+        <a className="support-link" href="mailto:support@campusmatch.app">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="3" />
+            <path d="M2 7l10 7 10-7" />
+          </svg>
+          support@campusmatch.app
+        </a>
+      </section>
+
       {/* ── Footer ── */}
       <footer className="site-footer">
         <Squiggle className="footer-squiggle" />
